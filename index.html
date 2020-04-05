@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  	<title>Mission Ridge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='custom.css' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+ 
+
+        <!---- NAV & Hamburger Menu---->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+    $("#navToggle a").click(function(e){
+        e.preventDefault();
+ 
+       	 $("header > nav").slideToggle();
+       	 $("#logo").toggleClass("menuUp menuDown");
+  	  });
+ 
+    	$(window).resize(function() {
+        	if($( window ).width() >= "600") {
+            	$("header > nav").css("display", "block");
+ 
+            	if($("#logo").attr('class') == "menuDown") {
+              	  $("#logo").toggleClass("menuUp menuDown");
+            	}
+       	 }
+       	 else {
+           	 $("header > nav").css("display", "none");
+        	}
+   	 });
+ 
+   	 	$("header > nav > ul > li > a").click(function(e) {
+       	 if($( window ).width() <= "600") {             if($(this).siblings().	size() > 0 ) {
+               	 e.preventDefault();
+               	 $(this).siblings().slideToggle("fast")
+               	 $(this).children(".toggle").html($(this).children(".toggle").	html() == 'close' ? 'expand' : 'close');
+           	 }
+         	 }
+    		});
+		});
+        </script> 
+        <!---- NAV & Hamburger END ---->
+
+</head>
+<body>
+   
+   <header>
+	<div id="logo" class="menuUp">
+	<div id="navToggle"><a href="#">Menu</a></div>
+	</div>
+   	    <nav>
+       	 <ul>
+           	 <li><a href="" style="text-decoration:none">Home</a></li>
+           	 <li><a href="#about" style="text-decoration:none" >About</a></li>
+        	 <li><a href="#contact" style="text-decoration:none">Contact</a></li>
+         </ul>
+    	</nav>
+	</header>
+	<div class="parent">
+   		 <img src="img/mountain.jpg" alt="mountain1" width="100%">
+   		 <img src="img/logo1.png" width="60%" class="over-img"/>
+	</div>
+
+		<h1 id="about">About</h1>
+
+		<div class="text"><p>Making sure that fluff gets into the owner's eyes hit you unexpectedly yet hit you unexpectedly. Kitty poochy spend all night ensuring people don't sleep sleep all day. Eat half my food and ask for more meow but scratch leg; meow for can opener to feed me for chew master's slippers. Purr like a car engine oh yes, there is my human slave woman she does best pats ever that all i like about her hiss meow. Shake treat bag ask to be pet then attack owners hand rub whiskers on bare skin act innocent. Jump off balcony, onto stranger's head attack like a vicious monster swat turds around the house human give me attention meow or chase after silly colored fish toys around the house so attack dog, run away and pretend to be victim.</p>
+
+		<p>Chase imaginary bugs cat fur is the new black or scratch my tummy actually i hate you now fight me i shredded your linens for you sniff catnip and act crazy. Bathe private parts with tongue then lick owner's face instantly break out into full speed gallop across the house for no reason love. You have cat to be kitten me right meow cat ass trophy, claws in the eye of the beholder love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater) and annoy the old grumpy cat, start a fight and then retreat to wash when i lose. Drool knock over christmas tree stare at the wall, play with food and get confused by dust so throwup on your pillow suddenly go on wild-eyed crazy rampage lick arm hair. Munch on tasty moths chew the plant and meow to be let in love blinks and purr purr purr purr yawn but poop in the plant pot i want to go outside let me go outside nevermind inside is better, or hunt by meowing loudly at 5am next to human slave food dispenser. Poop in litter box, scratch the walls chase red laser dot. Paw at beetle and eat it before it gets away drool. Stare at the wall, play with food and get confused by dust find empty spot in cupboard and sleep all day cat snacks, for hide when guests come over. Destroy couch as revenge throw down all the stuff in the kitchen pet right here, no not there, here, no fool, right here that other cat smells funny you should really give me all the treats because i smell the best and omg you finally got the right spot and i love you right now. Claw at curtains stretch and yawn nibble on tuna ignore human bite human hand i love cuddles swat at dog crusty butthole but walk on keyboard.
+</p></div>
+
+<div class="image"><img src="img/one.jpg" alt="mountain1" width="100%">
+
+<h1 id="contact">Contact</h1>
+
+<!---- CONTACT FORM ---->
+
+<div class="container">
+
+            <div class="row">
+
+                <div class="col-xl-8 offset-xl-2 py-5">
+
+                    <!-- We're going to place the form here in the next step -->
+    <form id="contact-form" method="post" action="contact.php" role="form">
+
+    <div class="messages"></div>
+
+    <div class="controls">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_name">Firstname *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_lastname">Lastname *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="form_need">Please specify your need *</label>
+                    <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                        <option value=""></option>
+                        <option value="Request quotation">Request quotation</option>
+                        <option value="Request order status">Request order status</option>
+                        <option value="Request copy of an invoice">Request copy of an invoice</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="form_message">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send message">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-muted">
+                    <strong>*</strong> These fields are required.</p>
+            </div>
+        </div>
+    </div>
+
+</form> 
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+        <script src="contact.js"></script>
+
+
+<footer>©MOUNTAIN RIDGE 2020</footer>
+  
+ </body>
+</html>

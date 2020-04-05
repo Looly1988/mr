@@ -1,0 +1,288 @@
+* {
+	margin: 0;
+	text-orientation: none;
+	text-decoration: none;
+	hyphens: none;
+}
+
+
+/* DOESNT WORK - TRYING TO SHRINK FONT SIZEWHEN SCREEN GETS SMALLER */
+body {
+	font-size: 10px;
+}
+
+@media (min-width:600px) {
+	body {
+		font-size: 12px;
+	}
+}
+
+@font-face {
+	font-family: CaviarDreams;
+	src: url("fonts/CaviarDreams.ttf");
+}
+
+@font-face {
+	font-family: CaviarDreams_Bold;
+	src: url("fonts/CaviarDreams_Bold.ttf");
+}
+
+
+
+/* NAV & Mobile NAV */
+ 
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+ 
+    header > div#logo {
+        font-family: 'CaviarDreams_Bold', sans-serif;
+        line-height: 70px;
+        position: relative;
+    }
+ 
+    header > .menuDown {
+        box-shadow: 0 3px 5px #2e4d58;
+    }
+ 
+    header > .menuUp {
+        box-shadow: none;
+    }
+ 
+        header > div#logo > h1 {
+            color: white;
+            font-weight: 300;
+            text-transform: lowercase;
+        }
+ 
+        header > div#logo > div#navToggle {
+            background-color: rgba(0,0,0,.15);
+            width: 25%;
+            margin: 0; 
+            padding: 0;
+            right: 0;
+            top: 0;
+            transition: 300ms all ease;
+        }
+ 
+           header > div#logo > div#navToggle:hover {
+                background-color: #3b988e;
+            }
+ 
+            header > div#logo > div#navToggle > a {
+                color: #2e4d58;
+                display: block;
+                margin-top: -4px;
+                padding: 0 2.5rem;
+                text-decoration: none;
+                transition: 300ms all ease;
+            }
+ 
+                header > div#logo > div#navToggle:hover > a {
+                    color: #3b988e;
+                }
+ 
+    header > nav {
+        background-color: white;
+        display: none;
+        flex: 1;
+        transform: 300ms all ease;
+        max-width: 75%;
+        margin: auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+        header > nav {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    /* @media() */
+ 
+        header nav > ul {
+            font-family: 'CaviarDreams_Bold', sans-serif;
+            list-style-type: none;
+            margin-top: 20px;
+            margin-bottom: -20px;
+            margin-left: 95px;
+        }
+ 
+            header nav > ul > li {
+                border-bottom: 1px solid rgba(153,238,78,.1);
+                position: relative;
+            }
+ 
+                header nav > ul > li:last-of-type {
+                    border-bottom: none;
+                }
+ 
+                header nav > ul > li > a {
+                    display: block;
+                    color: #2e4d58;
+                    font-weight: 700;
+                    padding: 1.5rem 0;
+                    text-decoration: none;
+                    transition: 250ms all ease;
+                }
+ 
+                    header nav > ul > li > a span.toggle {
+                        background-color: rgba(0,0,0,.05);
+                        border-radius: 3rem;
+                        color: rgba(0,0,0,.25);
+                        font-size: 0.75em;
+                        font-weight: 500;
+                        padding: 2px 8px;
+                        text-transform: lowercase;
+                    }
+ 
+                    header nav > ul > li > a span.caret {
+                        display: none;
+                    }
+ 
+                    header > nav > ul > li:hover > a {
+                        color: #3b988e;
+                    }
+ 
+            header > nav > ul > li > nav {
+                background-color: #2e4d58;
+                border-radius: 1.5em;
+                box-shadow: 0 2px 8px rgba(0,0,0,.6);
+                display: none;
+                overflow: hidden;
+                position: absolute;
+                right: 5%;
+                width: 90%;
+                z-index: 100;
+            }
+ 
+                header > nav > ul > li > nav > ul > li > a {
+                    color: rgba(255,255,255,.85);
+                    transition: 300ms all ease;
+                }
+ 
+                    header > nav > ul > li > nav > ul > li:hover > a {
+                        color: rgba(26,45,23,1);
+                    }
+ 
+/* Medium screens */
+@media all and (min-width: 600px) {
+    header > div#logo > div#navToggle {
+        display: none;
+    }
+ 
+    header {
+        font-family: 'aqua', sans-serif;
+        font-size: 15pt;
+        padding-bottom: 2vw;
+        flex-direction: row;
+        line-height: 70px;
+    }
+ 
+ 
+    header > nav {
+        background-color: transparent;
+        display: block;
+    }
+ 
+        header > nav > ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+ 
+            header nav > ul > li {
+                border-bottom: none;
+                display: block;
+                margin-right: 12vw;
+                text-decoration: none;
+
+            }
+ 
+                header nav > ul > li > a {
+                    padding: 0 1.25rem;
+                }
+ 
+                    header nav > ul > li > a span.toggle {
+                        display: none;
+                    }
+ 
+                    header nav > ul > li > a span.caret {
+                        border-bottom: 4px solid transparent;
+                        border-top: 4px solid #1a2d17;
+                        border-right: 4px solid transparent;
+                        border-left: 4px solid transparent;
+                        border-radius: 1px;
+                        content: "";
+                        display: inline-block;
+                    }
+ 
+                        header nav > ul > li:hover > a span.caret {
+                            border-top-color: rgb(140, 193, 193);
+                            transform: rotate(270deg);
+                        }
+ 
+    header > nav > ul > li:hover > nav {
+        background-color: rgb(153,238,78,.85);
+        border-radius: .25em;
+        display: block;
+        line-height: 3em;
+        right: -50%;
+        width: 196px;
+    }
+}
+
+/* HEADER IMAGE & LOGO */
+
+.parent{
+    position: relative;
+}
+.over-img{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+
+
+/* ABOUT PARAGRAPH */
+
+h1 {
+	font-family: 'CaviarDreams_Bold', sans-serif;
+	text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+.text {
+	font-family: 'CaviarDreams', sans-serif;
+	font-size: 15pt;
+	line-height: 35px;
+	margin: 0px 250px 30px 250px;
+  }
+
+  .image {
+  	margin-top: 100px;
+  }
+
+
+/* FORM */
+
+input {
+	font-family: 'CaviarDreams_Bold', sans-serif;
+}
+
+footer {
+	background-color: #2e4d58;
+    width: 100%;
+    padding: 40px;
+    
+	font-family: 'CaviarDreams_Bold', sans-serif;
+	font-size: 12px;
+	color: white;
+	text-align: center;
+	margin-top: 50px;
+
+
+}
